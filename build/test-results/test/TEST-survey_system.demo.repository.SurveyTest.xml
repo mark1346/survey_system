@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="survey_system.demo.repository.SurveyTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-11-25T15:32:17" hostname="Markui-MacBookAir.local" time="0.391">
+  <properties/>
+  <testcase name="setSurveyRepositoryTest()" classname="survey_system.demo.repository.SurveyTest" time="0.391"/>
+  <system-out><![CDATA[00:32:14.968 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [survey_system.demo.repository.SurveyTest]: SurveyTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:32:15.169 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration survey_system.demo.DemoApplication for test class survey_system.demo.repository.SurveyTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.5)
+
+2023-11-26T00:32:15.653+09:00  INFO 53006 --- [    Test worker] s.demo.repository.SurveyTest             : Starting SurveyTest using Java 17.0.8.1 with PID 53006 (started by markhan in /Users/markhan/programming/SpringBoot/demo)
+2023-11-26T00:32:15.655+09:00  INFO 53006 --- [    Test worker] s.demo.repository.SurveyTest             : No active profile set, falling back to 1 default profile: "default"
+2023-11-26T00:32:16.031+09:00  INFO 53006 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-11-26T00:32:16.045+09:00  INFO 53006 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+2023-11-26T00:32:16.338+09:00  INFO 53006 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-11-26T00:32:16.373+09:00  INFO 53006 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.13.Final
+2023-11-26T00:32:16.374+09:00  INFO 53006 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-11-26T00:32:16.534+09:00  INFO 53006 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-11-26T00:32:16.553+09:00  INFO 53006 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-11-26T00:32:16.613+09:00  INFO 53006 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:tcp://localhost/~/survey2 user=SA
+2023-11-26T00:32:16.613+09:00  INFO 53006 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-11-26T00:32:16.780+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926336780 | took 5ms | statement | connection 1| url jdbc:h2:tcp://localhost/~/survey2
+select * from INFORMATION_SCHEMA.SEQUENCES
+select * from INFORMATION_SCHEMA.SEQUENCES;
+2023-11-26T00:32:17.236+09:00  INFO 53006 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2023-11-26T00:32:17.243+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists choice cascade 
+2023-11-26T00:32:17.245+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337245 | took 1ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop table if exists choice cascade 
+
+    drop table if exists choice cascade ;
+2023-11-26T00:32:17.246+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists option cascade 
+2023-11-26T00:32:17.246+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337246 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop table if exists option cascade 
+
+    drop table if exists option cascade ;
+2023-11-26T00:32:17.247+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists question cascade 
+2023-11-26T00:32:17.247+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337247 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop table if exists question cascade 
+
+    drop table if exists question cascade ;
+2023-11-26T00:32:17.248+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists survey cascade 
+2023-11-26T00:32:17.249+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337249 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop table if exists survey cascade 
+
+    drop table if exists survey cascade ;
+2023-11-26T00:32:17.249+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists users cascade 
+2023-11-26T00:32:17.250+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337250 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop table if exists users cascade 
+
+    drop table if exists users cascade ;
+2023-11-26T00:32:17.250+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists choice_seq
+2023-11-26T00:32:17.250+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337250 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop sequence if exists choice_seq
+
+    drop sequence if exists choice_seq;
+2023-11-26T00:32:17.250+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists option_seq
+2023-11-26T00:32:17.251+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337251 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop sequence if exists option_seq
+
+    drop sequence if exists option_seq;
+2023-11-26T00:32:17.251+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists question_seq
+2023-11-26T00:32:17.251+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337251 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop sequence if exists question_seq
+
+    drop sequence if exists question_seq;
+2023-11-26T00:32:17.252+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists survey_seq
+2023-11-26T00:32:17.252+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337252 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop sequence if exists survey_seq
+
+    drop sequence if exists survey_seq;
+2023-11-26T00:32:17.252+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    drop sequence if exists users_seq
+2023-11-26T00:32:17.253+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337253 | took 0ms | statement | connection 2| url jdbc:h2:tcp://localhost/~/survey2
+
+    drop sequence if exists users_seq
+
+    drop sequence if exists users_seq;
+2023-11-26T00:32:17.257+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence choice_seq start with 1 increment by 50
+2023-11-26T00:32:17.258+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337258 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create sequence choice_seq start with 1 increment by 50
+
+    create sequence choice_seq start with 1 increment by 50;
+2023-11-26T00:32:17.258+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence option_seq start with 1 increment by 50
+2023-11-26T00:32:17.259+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337259 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create sequence option_seq start with 1 increment by 50
+
+    create sequence option_seq start with 1 increment by 50;
+2023-11-26T00:32:17.259+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence question_seq start with 1 increment by 50
+2023-11-26T00:32:17.260+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337260 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create sequence question_seq start with 1 increment by 50
+
+    create sequence question_seq start with 1 increment by 50;
+2023-11-26T00:32:17.260+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence survey_seq start with 1 increment by 50
+2023-11-26T00:32:17.260+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337260 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create sequence survey_seq start with 1 increment by 50
+
+    create sequence survey_seq start with 1 increment by 50;
+2023-11-26T00:32:17.261+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create sequence users_seq start with 1 increment by 50
+2023-11-26T00:32:17.261+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337261 | took 0ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create sequence users_seq start with 1 increment by 50
+
+    create sequence users_seq start with 1 increment by 50;
+2023-11-26T00:32:17.264+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create table choice (
+        choice_id bigint not null,
+        option_id bigint,
+        user_id bigint,
+        primary key (choice_id)
+    )
+2023-11-26T00:32:17.266+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337266 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create table choice (
+        choice_id bigint not null,
+        option_id bigint,
+        user_id bigint,
+        primary key (choice_id)
+    )
+
+    create table choice (
+        choice_id bigint not null,
+        option_id bigint,
+        user_id bigint,
+        primary key (choice_id)
+    );
+2023-11-26T00:32:17.267+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create table option (
+        score integer not null,
+        option_id bigint not null,
+        question_id bigint,
+        option_text varchar(255),
+        primary key (option_id)
+    )
+2023-11-26T00:32:17.270+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337270 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create table option (
+        score integer not null,
+        option_id bigint not null,
+        question_id bigint,
+        option_text varchar(255),
+        primary key (option_id)
+    )
+
+    create table option (
+        score integer not null,
+        option_id bigint not null,
+        question_id bigint,
+        option_text varchar(255),
+        primary key (option_id)
+    );
+2023-11-26T00:32:17.271+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create table question (
+        question_id bigint not null,
+        survey_id bigint,
+        question_text varchar(255),
+        primary key (question_id)
+    )
+2023-11-26T00:32:17.272+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337272 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create table question (
+        question_id bigint not null,
+        survey_id bigint,
+        question_text varchar(255),
+        primary key (question_id)
+    )
+
+    create table question (
+        question_id bigint not null,
+        survey_id bigint,
+        question_text varchar(255),
+        primary key (question_id)
+    );
+2023-11-26T00:32:17.273+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create table survey (
+        survey_id bigint not null,
+        description varchar(255),
+        title varchar(255),
+        primary key (survey_id)
+    )
+2023-11-26T00:32:17.276+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337276 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create table survey (
+        survey_id bigint not null,
+        description varchar(255),
+        title varchar(255),
+        primary key (survey_id)
+    )
+
+    create table survey (
+        survey_id bigint not null,
+        description varchar(255),
+        title varchar(255),
+        primary key (survey_id)
+    );
+2023-11-26T00:32:17.276+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    create table users (
+        user_id bigint not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (user_id)
+    )
+2023-11-26T00:32:17.277+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337277 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    create table users (
+        user_id bigint not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (user_id)
+    )
+
+    create table users (
+        user_id bigint not null,
+        password varchar(255),
+        username varchar(255),
+        primary key (user_id)
+    );
+2023-11-26T00:32:17.278+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists choice 
+       add constraint FKilywtgud5nu4yd7at9np5wqgj 
+       foreign key (option_id) 
+       references option
+2023-11-26T00:32:17.279+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337279 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    alter table if exists choice 
+       add constraint FKilywtgud5nu4yd7at9np5wqgj 
+       foreign key (option_id) 
+       references option
+
+    alter table if exists choice 
+       add constraint FKilywtgud5nu4yd7at9np5wqgj 
+       foreign key (option_id) 
+       references option;
+2023-11-26T00:32:17.280+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists choice 
+       add constraint FKf2507a71f9mpopvmf1pbrs4x1 
+       foreign key (user_id) 
+       references users
+2023-11-26T00:32:17.282+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337282 | took 2ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    alter table if exists choice 
+       add constraint FKf2507a71f9mpopvmf1pbrs4x1 
+       foreign key (user_id) 
+       references users
+
+    alter table if exists choice 
+       add constraint FKf2507a71f9mpopvmf1pbrs4x1 
+       foreign key (user_id) 
+       references users;
+2023-11-26T00:32:17.283+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists option 
+       add constraint FKgtlhwmagte7l2ssfsgw47x9ka 
+       foreign key (question_id) 
+       references question
+2023-11-26T00:32:17.285+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337285 | took 2ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    alter table if exists option 
+       add constraint FKgtlhwmagte7l2ssfsgw47x9ka 
+       foreign key (question_id) 
+       references question
+
+    alter table if exists option 
+       add constraint FKgtlhwmagte7l2ssfsgw47x9ka 
+       foreign key (question_id) 
+       references question;
+2023-11-26T00:32:17.285+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists question 
+       add constraint FK65ro96jafjvulbqu8ia0pb254 
+       foreign key (survey_id) 
+       references survey
+2023-11-26T00:32:17.287+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337287 | took 1ms | statement | connection 3| url jdbc:h2:tcp://localhost/~/survey2
+
+    alter table if exists question 
+       add constraint FK65ro96jafjvulbqu8ia0pb254 
+       foreign key (survey_id) 
+       references survey
+
+    alter table if exists question 
+       add constraint FK65ro96jafjvulbqu8ia0pb254 
+       foreign key (survey_id) 
+       references survey;
+2023-11-26T00:32:17.288+09:00  INFO 53006 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-11-26T00:32:17.356+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for users_seq
+2023-11-26T00:32:17.359+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337359 | took 1ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for users_seq
+select next value for users_seq;
+2023-11-26T00:32:17.372+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for survey_seq
+2023-11-26T00:32:17.373+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337373 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for survey_seq
+select next value for survey_seq;
+2023-11-26T00:32:17.374+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for question_seq
+2023-11-26T00:32:17.374+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337374 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for question_seq
+select next value for question_seq;
+2023-11-26T00:32:17.375+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for question_seq
+2023-11-26T00:32:17.376+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337376 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for question_seq
+select next value for question_seq;
+2023-11-26T00:32:17.376+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for option_seq
+2023-11-26T00:32:17.377+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337377 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for option_seq
+select next value for option_seq;
+2023-11-26T00:32:17.377+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for option_seq
+2023-11-26T00:32:17.377+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337377 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for option_seq
+select next value for option_seq;
+2023-11-26T00:32:17.378+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for choice_seq
+2023-11-26T00:32:17.378+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337378 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for choice_seq
+select next value for choice_seq;
+2023-11-26T00:32:17.379+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for choice_seq
+2023-11-26T00:32:17.379+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337379 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+select next value for choice_seq
+select next value for choice_seq;
+2023-11-26T00:32:17.387+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        users
+        (password,username,user_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:17.388+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [1234]
+2023-11-26T00:32:17.388+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [VARCHAR] - [Mark]
+2023-11-26T00:32:17.388+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [1]
+2023-11-26T00:32:17.388+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337388 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into users (password,username,user_id) values (?,?,?)
+insert into users (password,username,user_id) values ('1234','Mark',1);
+2023-11-26T00:32:17.390+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        survey
+        (description,title,survey_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:17.390+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [음식취향설문]
+2023-11-26T00:32:17.390+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [VARCHAR] - [설문1]
+2023-11-26T00:32:17.390+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [1]
+2023-11-26T00:32:17.392+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337392 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into survey (description,title,survey_id) values (?,?,?)
+insert into survey (description,title,survey_id) values ('음식취향설문','설문1',1);
+2023-11-26T00:32:17.392+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        question
+        (question_text,survey_id,question_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:17.393+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [좋아하는 한식은?]
+2023-11-26T00:32:17.393+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [1]
+2023-11-26T00:32:17.393+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [1]
+2023-11-26T00:32:17.394+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337394 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into question (question_text,survey_id,question_id) values (?,?,?)
+insert into question (question_text,survey_id,question_id) values ('좋아하는 한식은?',1,1);
+2023-11-26T00:32:17.394+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        question
+        (question_text,survey_id,question_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:17.394+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [좋아하는 중식은?]
+2023-11-26T00:32:17.394+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [1]
+2023-11-26T00:32:17.395+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [2]
+2023-11-26T00:32:17.395+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337395 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into question (question_text,survey_id,question_id) values (?,?,?)
+insert into question (question_text,survey_id,question_id) values ('좋아하는 중식은?',1,2);
+2023-11-26T00:32:17.395+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        option
+        (option_text,question_id,score,option_id) 
+    values
+        (?,?,?,?)
+2023-11-26T00:32:17.396+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [김치찌개]
+2023-11-26T00:32:17.396+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [1]
+2023-11-26T00:32:17.396+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [INTEGER] - [0]
+2023-11-26T00:32:17.396+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [4] as [BIGINT] - [1]
+2023-11-26T00:32:17.396+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337396 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into option (option_text,question_id,score,option_id) values (?,?,?,?)
+insert into option (option_text,question_id,score,option_id) values ('김치찌개',1,0,1);
+2023-11-26T00:32:17.396+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        option
+        (option_text,question_id,score,option_id) 
+    values
+        (?,?,?,?)
+2023-11-26T00:32:17.397+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [된장찌개]
+2023-11-26T00:32:17.397+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [1]
+2023-11-26T00:32:17.397+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [INTEGER] - [0]
+2023-11-26T00:32:17.397+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [4] as [BIGINT] - [2]
+2023-11-26T00:32:17.397+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337397 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into option (option_text,question_id,score,option_id) values (?,?,?,?)
+insert into option (option_text,question_id,score,option_id) values ('된장찌개',1,0,2);
+2023-11-26T00:32:17.398+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        option
+        (option_text,question_id,score,option_id) 
+    values
+        (?,?,?,?)
+2023-11-26T00:32:17.398+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [짜장면]
+2023-11-26T00:32:17.398+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [2]
+2023-11-26T00:32:17.399+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [INTEGER] - [0]
+2023-11-26T00:32:17.399+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [4] as [BIGINT] - [3]
+2023-11-26T00:32:17.399+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337399 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into option (option_text,question_id,score,option_id) values (?,?,?,?)
+insert into option (option_text,question_id,score,option_id) values ('짜장면',2,0,3);
+2023-11-26T00:32:17.400+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        option
+        (option_text,question_id,score,option_id) 
+    values
+        (?,?,?,?)
+2023-11-26T00:32:17.400+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [짬뽕]
+2023-11-26T00:32:17.400+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [2]
+2023-11-26T00:32:17.400+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [INTEGER] - [0]
+2023-11-26T00:32:17.401+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [4] as [BIGINT] - [4]
+2023-11-26T00:32:17.401+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337401 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into option (option_text,question_id,score,option_id) values (?,?,?,?)
+insert into option (option_text,question_id,score,option_id) values ('짬뽕',2,0,4);
+2023-11-26T00:32:17.402+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        choice
+        (option_id,user_id,choice_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:17.403+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [BIGINT] - [2]
+2023-11-26T00:32:17.403+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [1]
+2023-11-26T00:32:17.403+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [1]
+2023-11-26T00:32:17.404+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337404 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into choice (option_id,user_id,choice_id) values (?,?,?)
+insert into choice (option_id,user_id,choice_id) values (2,1,1);
+2023-11-26T00:32:17.404+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        choice
+        (option_id,user_id,choice_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:17.405+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [BIGINT] - [4]
+2023-11-26T00:32:17.405+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [BIGINT] - [1]
+2023-11-26T00:32:17.405+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [2]
+2023-11-26T00:32:17.405+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337405 | took 0ms | statement | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+insert into choice (option_id,user_id,choice_id) values (?,?,?)
+insert into choice (option_id,user_id,choice_id) values (4,1,2);
+2023-11-26T00:32:17.409+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926337409 | took 0ms | commit | connection 4| url jdbc:h2:tcp://localhost/~/survey2
+
+;
+2023-11-26T00:32:17.540+09:00  WARN 53006 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-11-26T00:32:17.787+09:00  INFO 53006 --- [    Test worker] s.demo.repository.SurveyTest             : Started SurveyTest in 2.422 seconds (process running for 3.749)
+2023-11-26T00:32:18.177+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    select
+        next value for survey_seq
+2023-11-26T00:32:18.178+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926338178 | took 0ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/survey2
+select next value for survey_seq
+select next value for survey_seq;
+2023-11-26T00:32:18.182+09:00 DEBUG 53006 --- [    Test worker] org.hibernate.SQL                        : 
+    insert 
+    into
+        survey
+        (description,title,survey_id) 
+    values
+        (?,?,?)
+2023-11-26T00:32:18.183+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [1] as [VARCHAR] - [설문테스트입니다.]
+2023-11-26T00:32:18.183+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [2] as [VARCHAR] - [설문테스트]
+2023-11-26T00:32:18.183+09:00 TRACE 53006 --- [    Test worker] org.hibernate.orm.jdbc.bind              : binding parameter [3] as [BIGINT] - [2]
+2023-11-26T00:32:18.184+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926338184 | took 0ms | statement | connection 5| url jdbc:h2:tcp://localhost/~/survey2
+insert into survey (description,title,survey_id) values (?,?,?)
+insert into survey (description,title,survey_id) values ('설문테스트입니다.','설문테스트',2);
+2023-11-26T00:32:18.184+09:00  INFO 53006 --- [    Test worker] p6spy                                    : #1700926338184 | took 0ms | commit | connection 5| url jdbc:h2:tcp://localhost/~/survey2
+
+;
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
